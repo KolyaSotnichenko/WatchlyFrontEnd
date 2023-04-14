@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic'
 import { FC } from 'react'
 import { Controller, useForm } from 'react-hook-form'
+import { stripHtml } from 'string-strip-html'
 
 import SkeletonLoader from '@/components/ui/SkeletonLoader'
 import AdminNavigation from '@/components/ui/admin-navigation/AdminNavigation'
@@ -23,6 +24,13 @@ import { useMovieEdit } from './useMovieEdit'
 const DynamicSelect = dynamic(() => import('@/ui/select/Select'), {
 	ssr: false,
 })
+
+const DynamicTextEditor = dynamic(
+	() => import('@/components/ui/form-elements/TextEditor'),
+	{
+		ssr: false,
+	}
+)
 
 const GenreEdit: FC = () => {
 	const {
@@ -192,6 +200,29 @@ const GenreEdit: FC = () => {
 								}}
 							/>
 						</div>
+						<Controller
+							control={control}
+							name="description"
+							defaultValue=""
+							render={({
+								field: { value, onChange },
+								fieldState: { error },
+							}) => (
+								<DynamicTextEditor
+									onChange={onChange}
+									value={value}
+									error={error}
+									placeholder="Description"
+								/>
+							)}
+							rules={{
+								validate: {
+									required: (v) =>
+										(v && stripHtml(v).result.length > 0) ||
+										'Description is required!',
+								},
+							}}
+						/>
 						<Button>Update</Button>
 					</>
 				)}
