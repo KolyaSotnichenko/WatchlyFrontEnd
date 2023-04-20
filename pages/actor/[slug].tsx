@@ -30,7 +30,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 			params: { slug: actor.slug },
 		}))
 
-		return { paths, fallback: 'blocking' }
+		return { paths, fallback: true }
 	} catch (error) {
 		return {
 			paths: [],
@@ -50,7 +50,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 				movies,
 				actor,
 			},
-			revalidate: 60,
+			revalidate: 10,
 		}
 	} catch (error) {
 		return {

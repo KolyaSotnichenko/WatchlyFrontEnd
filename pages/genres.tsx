@@ -37,7 +37,7 @@ export const getStaticProps: GetStaticProps = async () => {
 				filteredCollections,
 				levelCollections,
 			},
-			revalidate: 60,
+			revalidate: 10,
 		}
 	} catch (error) {
 		return {

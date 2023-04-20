@@ -6,7 +6,7 @@ import axios  from "api/interceptors"
 
 export const ActorService = {
     async getAll(searchTerm?:string){
-         return axiosClassic.get<IActor[]>(getActorsUrl(``), {
+         return axiosClassic.get<IActor[]>(getActorsUrl(''), {
             params: searchTerm ? {
                 searchTerm,
             } : {}
@@ -18,7 +18,7 @@ export const ActorService = {
     },
 
     async getBySlug(slug:string){
-        return axios.get<IActor>(getActorsUrl(`/by-slug/${slug}`))
+        return axiosClassic.get<IActor>(getActorsUrl(`/by-slug/${slug}`))
     },
 
     async createActor() {

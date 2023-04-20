@@ -26,10 +26,10 @@ const MoviePage: NextPage<IMoviePage> = ({ similarMovies, movie }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	try {
-		const { data: actors } = await MovieService.getAll()
+		const { data: movies } = await MovieService.getAll()
 
-		const paths = actors.map((actor) => ({
-			params: { slug: actor.slug },
+		const paths = movies.map((movie) => ({
+			params: { slug: movie.slug },
 		}))
 
 		return { paths, fallback: 'blocking' }
@@ -62,7 +62,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 				similarMovies,
 				movie,
 			},
-			revalidate: 60,
+			revalidate: 10,
 		}
 	} catch (error) {
 		return {
