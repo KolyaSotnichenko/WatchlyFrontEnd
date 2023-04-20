@@ -1,7 +1,7 @@
 {
   "name": "watchly-frontend",
   "author": {
-    "email": "kolya.sotnichenko0811#gmail.com",
+    "email": "kolya.sotnichenko0811@gmail.com",
     "name": "Mykola Sotnichenko"
   },
   "description": "Cinema application for learning English",
@@ -22,6 +22,7 @@
     "classnames": "^2.3.2",
     "draft-js": "^0.11.7",
     "draftjs-to-html": "^0.9.1",
+    "html-react-parser": "^3.0.15",
     "html-to-draftjs": "^1.5.0",
     "js-cookie": "^3.0.1",
     "next": "13.2.4",
@@ -36,7 +37,10 @@
     "react-redux": "^8.0.5",
     "react-redux-toastr": "^7.6.11",
     "react-select": "^5.7.2",
+    "react-star-rating-component": "^1.4.1",
+    "react-transition-group": "^4.4.5",
     "sass": "^1.59.3",
+    "sharp": "^0.32.0",
     "string-strip-html": "^13.2.2",
     "typescript": "5.0.2"
   },
@@ -51,6 +55,7 @@
     "@types/react-draft-wysiwyg": "^1.13.4",
     "@types/react-redux-toastr": "^7.6.2",
     "@types/react-select": "^5.0.1",
+    "@types/react-star-rating-component": "^1.4.1",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.21",
     "prettier": "^2.8.6",

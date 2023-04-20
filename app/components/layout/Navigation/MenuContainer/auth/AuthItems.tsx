@@ -1,29 +1,19 @@
-import { FC, useEffect, useState } from 'react'
+import { FC } from 'react'
 
 import { useAuth } from '@/hooks/useAuth'
 
 import { getAdminHomeUrl } from '@/config/url.config'
-
-import { IUserState } from '@/store/user/user.interface'
 
 import MenuItem from '../MenuItem'
 
 import LogoutButton from './LogoutButton'
 
 const AuthItems: FC = () => {
-	const [authUser, setAuthUser] = useState<IUserState | null>()
-
 	const { user } = useAuth()
-
-	useEffect(() => {
-		if (user) return setAuthUser(user)
-
-		return setAuthUser(null)
-	}, [user])
 
 	return (
 		<>
-			{authUser?.isAdmin && (
+			{user?.isAdmin && (
 				<MenuItem
 					item={{
 						icon: 'MdOutlineLock',
@@ -33,7 +23,7 @@ const AuthItems: FC = () => {
 				/>
 			)}
 
-			{authUser ? (
+			{user ? (
 				<>
 					<MenuItem
 						item={{

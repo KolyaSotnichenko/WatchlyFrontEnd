@@ -23,7 +23,7 @@ const HeadProvider: FC<IHeadProvider> = ({ children }) => {
 				<meta charSet="UTF-8" />
 				<meta
 					name="view"
-					content="width=device-width, initial-scale=1, maximum-scale=1.0"
+					content="width=device-width, initial-scale=1, maximum-scale=5.0"
 				/>
 
 				<FavIcons />
@@ -34,6 +34,8 @@ const HeadProvider: FC<IHeadProvider> = ({ children }) => {
 					name="apple-mobile-web-app-status-bar-style"
 					content={'#181B1E'}
 				/>
+
+				<link rel="manifest" href="/manifest.json" />
 			</Head>
 			{children}
 		</>
