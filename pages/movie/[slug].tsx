@@ -32,7 +32,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 			params: { slug: movie.slug },
 		}))
 
-		return { paths, fallback: false }
+		return { paths, fallback: 'blocking' }
 	} catch (error) {
 		return {
 			paths: [],
