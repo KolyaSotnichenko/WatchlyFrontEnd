@@ -2,12 +2,12 @@
     @apply mb-14 animate-fade;
 
     .heading{
-        @apply md:max-xl:pl-7 text-gray-500 uppercase text-sm font-semibold pl-layout;
+        @apply text-gray-500 uppercase text-sm font-semibold pl-layout;
     }
 
     .ul{
         >li{
-            @apply md:max-xl:px-4 px-8 border-r-4 border-r-transparent transition-colors;
+            @apply px-8 border-r-4 border-r-transparent transition-colors;
 
             & svg{
                 @apply text-2lg;
