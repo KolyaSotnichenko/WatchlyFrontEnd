@@ -29,12 +29,13 @@ export const useUpload: TypeUpload = (onChange, folder) => {
 
         const formData = new FormData()
         formData.append('file', files[0])
-
-        await mutateAsync(formData)
-
-        setTimeout(() => {
-            setIsLoading(false)
-        }, 1000)
+        try {
+            await mutateAsync(formData);
+            setIsLoading(false);
+          } catch (error) {
+            toastError(error, "Upload file");
+            setIsLoading(false);
+          }
     }, [mutateAsync])
 
     return useMemo(() => ({

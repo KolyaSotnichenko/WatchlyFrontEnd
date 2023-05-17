@@ -12,7 +12,7 @@ import { getMovieUrl } from '@/config/url.config'
 import Error404 from '../404'
 
 export interface IMoviePage {
-	movie: IMovie
+	movie: IMovie | null
 	similarMovies: IGalleryItem[]
 }
 
