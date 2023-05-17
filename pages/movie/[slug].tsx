@@ -29,7 +29,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 		const { data: movies } = await MovieService.getAll()
 
 		const paths = movies.map((movie) => ({
-			params: { slug: movie.slug },
+			params: { slug: movie.slug || '404' },
 		}))
 
 		return { paths, fallback: 'blocking' }
