@@ -22,7 +22,9 @@ const MenuItem: FC<{ item: IMenuItem }> = ({ item }) => {
 				className="flex items-center text-gray-600 px-3 mt-6 cursor-pointer"
 			>
 				<MaterialIcon name={item.icon} />
-				<span className="ml-3 text-lg hover:text-white">{item.title}</span>
+				<span className="md:max-xl:text-sm ml-3 text-lg hover:text-white">
+					{item.title}
+				</span>
 			</Link>
 		</li>
 	)

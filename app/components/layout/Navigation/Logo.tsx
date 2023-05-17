@@ -11,6 +11,7 @@ const Logo: FC = () => {
 				src={logoImage}
 				width={247}
 				height={34}
+				className="fill-red-600"
 				alt="Logo"
 				draggable={false}
 			/>
