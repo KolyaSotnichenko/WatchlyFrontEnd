@@ -8,12 +8,12 @@ const nextConfig = {
     APP_ENV: process.env.REACT_APP_ENV,
     APP_SERVER_URL: process.env.REACT_APP_SERVER_URL,
   },
-  // exportPathMap: async function () {
-  //   return {
-  //     '/': { page: '/' },
-  //     '/movie/*': { page: '/movie/[slug]' },
-  //   }
-  // },
+  exportPathMap: async function () {
+    return {
+      '/': { page: '/' },
+      '/movie/*': { page: '/movie/[slug]' },
+    }
+  },
   async rewrites(){
     return [
       {
