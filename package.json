@@ -40,6 +40,7 @@
     "react-select": "^5.7.2",
     "react-star-rating-component": "^1.4.1",
     "react-transition-group": "^4.4.5",
+    "react-tuby": "^0.1.24",
     "sass": "^1.59.3",
     "sharp": "^0.32.0",
     "string-strip-html": "^13.2.2",

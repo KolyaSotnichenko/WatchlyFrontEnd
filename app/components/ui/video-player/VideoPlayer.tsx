@@ -1,5 +1,7 @@
 import cn from 'classnames'
 import { FC } from 'react'
+import { Player } from 'react-tuby'
+import 'react-tuby/css/main.css'
 
 import { useAuth } from '@/hooks/useAuth'
 
@@ -11,7 +13,7 @@ import { useVideo } from './useVideo'
 import { IVideoPlayer } from './video.interface'
 
 const VideoPlayer: FC<IVideoPlayer> = ({ slug, videoSource }) => {
-	const { actions, video, videoRef } = useVideo()
+	// const { actions, video, videoRef } = useVideo()
 
 	const { user } = useAuth()
 
@@ -23,7 +25,7 @@ const VideoPlayer: FC<IVideoPlayer> = ({ slug, videoSource }) => {
 		>
 			{user ? (
 				<>
-					<video
+					{/* <video
 						ref={videoRef}
 						className={styles.video}
 						src={`${videoSource}#t=0`}
@@ -72,7 +74,28 @@ const VideoPlayer: FC<IVideoPlayer> = ({ slug, videoSource }) => {
 								<MaterialIcon name="MdFullscreen" />
 							</button>
 						</div>
-					</div>
+					</div> */}
+					<Player
+						src={[
+							{
+								quality: 'Full HD',
+								url: videoSource,
+							},
+						]}
+						// subtitles={[
+						// 	{
+						// 		lang: 'en',
+						// 		language: 'English',
+						// 		url: 'https://cdn.jsdelivr.net/gh/naptestdev/video-examples@master/en.vtt',
+						// 	},
+						// 	{
+						// 		lang: 'fr',
+						// 		language: 'French',
+						// 		url: 'https://cdn.jsdelivr.net/gh/naptestdev/video-examples@master/fr.vtt',
+						// 	},
+						// ]}
+						// poster="https://cdn.jsdelivr.net/gh/naptestdev/video-examples@master/poster.png"
+					/>
 				</>
 			) : (
 				<AuthPlaceholder slug={slug} />
