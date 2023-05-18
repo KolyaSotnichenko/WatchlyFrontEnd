@@ -39,6 +39,19 @@
 			}
 		}
 
+        > .uploadTextContainer {
+			@apply flex justify-center items-center shrink-0 w-24 h-24;
+
+			> span {
+				@apply animate-fade;
+                color: #198754;
+                font-weight: bold;
+                font-size: 18px;
+			}
+
+
+		}
+
 		> label {
 			@apply block mr-6;
 

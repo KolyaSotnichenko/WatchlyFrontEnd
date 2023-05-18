@@ -28,12 +28,20 @@ const UploadField: FC<IUploadField> = ({
 					{error && <div className={styles.error}>{error.message}</div>}
 				</label>
 
-				{!isNoImage && (
+				{!isNoImage ? (
 					<div className={styles.uploadImageContainer}>
 						{isLoading ? (
 							<SkeletonLoader count={1} className="w-full h-full" />
 						) : (
 							value && <Image src={value} alt="" fill unoptimized />
+						)}
+					</div>
+				) : (
+					<div className={styles.uploadTextContainer}>
+						{isLoading ? (
+							<SkeletonLoader count={1} className="w-full h-full" />
+						) : (
+							value && <span>SUCCESS</span>
 						)}
 					</div>
 				)}
