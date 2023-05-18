@@ -14,10 +14,10 @@ body {
   font-family: 'OutFit', sans-serif !important;
 
   @apply bg-gray-900;
-}
 
-track{
-  background-color: #e30b13;
+  > track{
+    background-color: #e30b13;
+  }
 }
 
 a {
