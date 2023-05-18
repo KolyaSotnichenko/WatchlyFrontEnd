@@ -12,7 +12,7 @@ import styles from './VideoPlayer.module.scss'
 import { useVideo } from './useVideo'
 import { IVideoPlayer } from './video.interface'
 
-const VideoPlayer: FC<IVideoPlayer> = ({ slug, videoSource }) => {
+const VideoPlayer: FC<IVideoPlayer> = ({ slug, subtitles, videoSource }) => {
 	// const { actions, video, videoRef } = useVideo()
 
 	const { user } = useAuth()
@@ -82,18 +82,13 @@ const VideoPlayer: FC<IVideoPlayer> = ({ slug, videoSource }) => {
 								url: videoSource,
 							},
 						]}
-						// subtitles={[
-						// 	{
-						// 		lang: 'en',
-						// 		language: 'English',
-						// 		url: 'https://cdn.jsdelivr.net/gh/naptestdev/video-examples@master/en.vtt',
-						// 	},
-						// 	{
-						// 		lang: 'fr',
-						// 		language: 'French',
-						// 		url: 'https://cdn.jsdelivr.net/gh/naptestdev/video-examples@master/fr.vtt',
-						// 	},
-						// ]}
+						subtitles={[
+							{
+								lang: 'en',
+								language: 'English',
+								url: `${subtitles}`,
+							},
+						]}
 						// poster="https://cdn.jsdelivr.net/gh/naptestdev/video-examples@master/poster.png"
 					/>
 				</>

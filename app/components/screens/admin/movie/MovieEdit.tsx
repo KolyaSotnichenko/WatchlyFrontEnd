@@ -199,6 +199,29 @@ const GenreEdit: FC = () => {
 									required: 'Video is required!',
 								}}
 							/>
+
+							<Controller
+								control={control}
+								name="subtitles"
+								defaultValue=""
+								render={({
+									field: { value, onChange },
+									fieldState: { error },
+								}) => (
+									<UploadField
+										onChange={onChange}
+										value={value}
+										error={error}
+										folder="subtitles"
+										placeholder="Subtitles"
+										style={{ marginTop: -25 }}
+										isNoImage
+									/>
+								)}
+								rules={{
+									required: 'Subtitles is required!',
+								}}
+							/>
 						</div>
 						<Controller
 							control={control}

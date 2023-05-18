@@ -34,7 +34,11 @@ const SingleMovie: FC<IMoviePage> = ({ movie, similarMovies }) => {
 					Detail={() => <Content movie={movie} />}
 				/>
 
-				<DynamicPlayer slug={movie.slug} videoSource={movie.videoUrl} />
+				<DynamicPlayer
+					slug={movie.slug}
+					subtitles={movie.subtitles}
+					videoSource={movie.videoUrl}
+				/>
 
 				<div className="mt-12">
 					<SubHeading title="Similar" />
