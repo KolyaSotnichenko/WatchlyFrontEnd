@@ -17,6 +17,8 @@ const VideoPlayer: FC<IVideoPlayer> = ({ slug, subtitles, videoSource }) => {
 
 	const { user } = useAuth()
 
+	console.log(subtitles)
+
 	return (
 		<div
 			className={cn(styles.wrapper, {
@@ -86,7 +88,7 @@ const VideoPlayer: FC<IVideoPlayer> = ({ slug, subtitles, videoSource }) => {
 							{
 								lang: 'en',
 								language: 'English',
-								url: `${subtitles}`,
+								url: subtitles,
 							},
 						]}
 						// poster="https://cdn.jsdelivr.net/gh/naptestdev/video-examples@master/poster.png"
