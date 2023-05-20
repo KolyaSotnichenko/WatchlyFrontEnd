@@ -12,7 +12,7 @@ import { IVideoPlayer } from './video.interface'
 const VideoPlayer: FC<IVideoPlayer> = ({ slug, subtitles, videoSource }) => {
 	const { user } = useAuth()
 
-	console.log(subtitles)
+	const isPaid = true
 
 	return (
 		<div
@@ -29,13 +29,17 @@ const VideoPlayer: FC<IVideoPlayer> = ({ slug, subtitles, videoSource }) => {
 								url: videoSource,
 							},
 						]}
-						subtitles={[
-							{
-								lang: 'en',
-								language: 'English',
-								url: subtitles,
-							},
-						]}
+						subtitles={
+							isPaid
+								? [
+										{
+											lang: 'en',
+											language: 'English',
+											url: subtitles,
+										},
+								  ]
+								: undefined
+						}
 						// poster="https://cdn.jsdelivr.net/gh/naptestdev/video-examples@master/poster.png"
 					/>
 				</>
